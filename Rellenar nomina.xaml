@@ -1,0 +1,155 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Rellenar_nomina" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,926" sap2010:WorkflowViewState.IdRef="Rellenar_nomina_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Rellenar_nomina" sap:VirtualizedContainerService.HintSize="546,861" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="in_TablaTrabajadores" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Leer datos trabajadores.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="484,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Leer datos trabajadores.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_TablaTrabajadores">
+          <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="in_TablaTrabajadores" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_ConexionDdbb" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:FilterDataTable OutputDataTable="{x:Null}" DataTable="[in_TablaTrabajadores]" DisplayName="Filtrar tabla de datos" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="484,161" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Int32">[1]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <x:Null />
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" sap:VirtualizedContainerService.HintSize="484,396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="428b185d-5253-4055-90d9-4526ecd34d1f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 1920, 1040" FilePath="ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019" IconBase64="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" InformativeScreenshot="8eb2617efb47f6c9c50b89dfa81104a2.png" Selector="&lt;wnd app='wps.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office' /&gt;" Title="Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
