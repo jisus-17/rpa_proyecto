@@ -21967,19 +21967,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mike\\.nuget\\packages\\": {},
-    "C:\\Users\\Mike\\AppData\\Local\\UiPath\\NugetFallbackFolder": {}
+    "C:\\Users\\34675\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "rpa",
       "projectName": "rpa",
-      "projectPath": "C:\\Users\\Mike\\Documents\\UiPath\\rpa_proyecto\\.local",
-      "packagesPath": "C:\\Users\\Mike\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mike\\Documents\\UiPath\\rpa_proyecto\\.local",
-      "fallbackFolders": [
-        "C:\\Users\\Mike\\AppData\\Local\\UiPath\\NugetFallbackFolder"
-      ]
+      "projectPath": "C:\\Users\\34675\\Documents\\UiPath\\rpa\\.local",
+      "packagesPath": "C:\\Users\\34675\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\34675\\Documents\\UiPath\\rpa\\.local"
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -22015,7 +22011,7 @@
             "version": "[23.4.4, 23.4.4]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Mike\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\34675\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {
