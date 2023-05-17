@@ -16,6 +16,7 @@
   "studioVersion": "23.4.1.0",
   "projectVersion": "1.0.0",
   "runtimeOptions": {
+    "exceptionHandlerWorkflow": "Main.xaml",
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
@@ -50,7 +51,7 @@
   "entryPoints": [
     {
       "filePath": "Main.xaml",
-      "uniqueId": "fd841498-ff71-48ee-8516-b9a1769bf226",
+      "uniqueId": "c782fa60-c336-49d5-ac0f-8b1f5b85547f",
       "input": [],
       "output": []
     }
