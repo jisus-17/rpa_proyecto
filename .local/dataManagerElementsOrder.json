@@ -41,6 +41,19 @@
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "manejoplantillas.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "carpeta_existe&Sequence_2",
+        "archivo_existe&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "plantilla"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
