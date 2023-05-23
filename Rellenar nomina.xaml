@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Rellenar_nomina" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,1863" sap2010:WorkflowViewState.IdRef="Rellenar_nomina_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Rellenar_nomina" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,4299" sap2010:WorkflowViewState.IdRef="Rellenar_nomina_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -110,7 +110,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Rellenar_nomina" sap:VirtualizedContainerService.HintSize="642,1798" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Rellenar_nomina" sap:VirtualizedContainerService.HintSize="738,4234" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="in_TablaTrabajadores" />
     </Sequence.Variables>
@@ -119,41 +119,119 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Leer datos trabajadores.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="580,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Leer datos trabajadores.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Leer datos trabajadores.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="676,114" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Leer datos trabajadores.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_TablaTrabajadores">[in_TablaTrabajadores]</OutArgument>
         <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_ConexionDdbb" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" sap:VirtualizedContainerService.HintSize="580,1378" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="147ac393-24c7-434a-9ed7-0d1c715c683c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" sap:VirtualizedContainerService.HintSize="676,3969" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" ScopeGuid="147ac393-24c7-434a-9ed7-0d1c715c683c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="546,1087" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Rellenar nomina" sap:VirtualizedContainerService.HintSize="642,3676" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_TablaTrabajadores]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="484,972" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_TablaTrabajadores]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="580,3561" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="450,855" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="546,3443" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:WriteCell Cell="P2" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Hoja1" Text="[CurrentRow(1).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
-                    <ui:WriteCell Cell="P3" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Hoja1" Text="[CurrentRow(4).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
-                    <ui:WriteCell Cell="F2" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Hoja1" Text="Grupo 3" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
-                    <ui:WriteCell Cell="F4" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Hoja1" Text="[CurrentRow(8).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
-                    <ui:WriteCell Cell="P14" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="Hoja1" Text="[CurrentRow(7).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="P2" DisplayName="Escribir nombre trabajador" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Hoja1" Text="[CurrentRow(1).ToString +  CurrentRow(2).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="P3" DisplayName="Escribir DNI trabajador" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Hoja1" Text="[CurrentRow(4).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="F2" DisplayName="Escribir nombre empresa" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Hoja1" Text="Grupo 3" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="F4" DisplayName="Escribir ciudad trabajador" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Hoja1" Text="[CurrentRow(8).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="P14" DisplayName="Escribir sueldo trabajador" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="Hoja1" Text="[CurrentRow(7).ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="H55" DisplayName="Escribir dia actual" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="Hoja1" Text="[datetime.Today.Day.ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="N55" DisplayName="Escribir mes actual" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_8" SheetName="Hoja1" Text="[datetime.Today.Month.ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <ui:WriteCell Cell="Q55" DisplayName="Escribir año actual" sap:VirtualizedContainerService.HintSize="484,116" sap2010:WorkflowViewState.IdRef="WriteCell_9" SheetName="Hoja1" Text="[datetime.Today.Year.ToString]" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Menu'" sap:VirtualizedContainerService.HintSize="484,158" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="147ac393-24c7-434a-9ed7-0d1c715c683c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CvTextArgument="Menu" CvType="Text" DesignTimeRectangle="35, 43, 31, 11" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Menu'" Guid="3092d4d2-fe6b-4045-a414-0c6b7146c065" InformativeScreenshot="a0c67a157df67e6432f171a4c761f3ef.png" ScopeSelectorArgument="&lt;wnd app='wps.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: et.exe" sap:VirtualizedContainerService.HintSize="484,1021" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" ScopeGuid="df2ed14d-0bf5-4ceb-82d9-1bf8f9a4d093" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,728" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Save As'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df2ed14d-0bf5-4ceb-82d9-1bf8f9a4d093" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvTextArgument="Save As" CvType="Text" DesignTimeRectangle="60, 165, 39, 11" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Save As'" Guid="9a28d935-011a-4ae4-b7a9-6bee68ce5815" InformativeScreenshot="c79a3756503383dd5c5972036f7132d9.png" ScopeSelectorArgument="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Escribir en 'Document Name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="df2ed14d-0bf5-4ceb-82d9-1bf8f9a4d093" Text="Nomina + Currentrow(1).tostring" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable CvElementArea="282, 510, 618, 26" CvTextArea="287, 517, 213, 14" CvTextArgument="Nomina_ejemplo_SMI_2023_BOE_15_02xls" CvType="InputBox" DesignTimeRectangle="282, 510, 618, 26" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Document Name'" Guid="7753bad2-dbf8-432e-969a-283228df2d21" InformativeScreenshot="5c330aee3d41a3d6da1e55f21315216b.png" ScopeSelectorArgument="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Save As' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <uix:Target CvTextArgument="Document Name Nomina_ejemplo_SMI_2023_BOE_15_02xls" CvType="Text" DesignTimeRectangle="187, 516, 313, 15" ElementType="Text" FriendlyName="'Document Name'" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'Save'" sap:VirtualizedContainerService.HintSize="388,158" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="df2ed14d-0bf5-4ceb-82d9-1bf8f9a4d093" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable CvElementArea="719, 573, 88, 27" CvTextArea="748, 580, 28, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="719, 573, 88, 27" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Save'" Guid="8df23ebc-2f61-4280-b3d5-b554d2699bd9" InformativeScreenshot="e15168739b3ca83ac4f54dc19e50ed49.png" ScopeSelectorArgument="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Save As' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="2, 60, 234, 634" FilePath="ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANdSURBVFhH7ZNJT5NRFIb5J4AgAso8yLRgyQ8w4pDAUv8EkzOCjEZ3CpEYdalLCgiUqQyFoCYuSKqJJBoHnACh7fWce8/57ml7C40u9SRP3jffGd4bLWn/i6s+OFhft3I7VLcyGKldHlR1AKr0qH8F3MYMzKJYWxAQql0aUE5g2VMXcgaoESq914csirVVvdQf4YWapX6hwKJQoFqo9jDL6tyP+QYsD0Qo1hYf+zP6hLqQM/2qCjzF2qoK9KmTgV4Ne1QNLHgK6B5pKvMx3wiKtVW5YI4h7FGl5348h827+hRrq3KhB5oMDrL2qgryqC5wljUVcJZibZXP31JMhVD2TesjanHrjfoZ/qUOq+/7u+riqycH3qNYW2Xz3d5CPI1rw2ovEqbzhxc+8sLLx85bSNlcd+IDSue6dAMpFYqMfXytDz/78ELVLvRRz87j4z0FdI+U52LvdyU+oGTWDCPsUZHN3a/6AWfWhpz9eOSMax49xdoqmb2pimcMOMSK8ANOB4foO8/FelQNe1QHeJNibRXBQtFMpxMf/Rc8fb+uquZ69BH8zgfZ83xi3yrnUKytQv8N3UAKhSKngvdS+hFuh/fU8tZb1bw2ovBeUuAmxdoq8F/3BgqmjUfVgD8L//yBFP8M96MRdW51WO8h+hYpe4q1dQKCUgUfyyp9+UyXerS5oh/h/7wRsxMPxdrCj8enrxmmhEqfQr9h8a5+wNbetjfPtzkcZynWVj58zJ+66gQXWI23aveMNgTu6Ad8gQfkT8J3BPus5CnWVt7kFZUHTQ171JQws8XTnerhuyX9AP+nDfrON0kJirWVCweS0bT6QH3b31HRaPRAuMLwI2xcvq9yn8M+gndYtb+c+IBj8DFnwsAeFWmGB/xI4de/Q3+G54PD3m4yKNZWzsQllQMN5Ch5VO2FenOs0nt9oYC5Z9R4xwO46SJ7vMNT7YVqcI5Vwx5VetPHXYq1lTXeDg0GA1g7VNaY8ajScz8ec8uo9Ham3fEAOq7BRVYXcgY4MtbmqfTcj9kBsEextjJ97RE+kOmz6kLOuJAzrnnMolhbmWOtIV7I9LUKTSRDqPR2Rt5oo55R7SGLYm1lT7TVZ/haQumjrREcSh9t8RbYo0qfrJ8cvN0SwiyK/ecrLe03Q4ISlwDtsCQAAAAASUVORK5CYII=" InformativeScreenshot="3364fa9f68e178c08e609a876ed74d74.png" Selector="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' idx='*' /&gt;" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'wps.exe Nomina_ejemplo_…'" sap:VirtualizedContainerService.HintSize="484,158" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="147ac393-24c7-434a-9ed7-0d1c715c683c" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable CvType="Icon" DesignTimeRectangle="131, 36, 26, 26" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'wps.exe Nomina_ejemplo_…'" Guid="c9b3c880-4198-4983-9466-812f66e8e3b5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEBSURBVEhLY/hPJzBqEdlgcFjk7BXxX03PjiQM0oMN4LUIpJFUgEsPXovsXIOhLOIBWRaRA8i2yNUn8v+xE2egPAgwtPQAG2jl6P+/s3fa/58/f0FlKLDo+Mmz/83tfFEsgxn25u27/6nZZf+7+qaD+SBAkkWguAFpQMYg18MAsmGv37z7b+UUAOXRyEcgAPIVVSxy843GiKOVazaDaZBvUrJKwfEEA2RbBAN7DxwF+wxkEAxbOlApMdg4B0FZ//9b2Pv9P3/xKpi9et0WMI0NkGURsiaQb2AW4TIMBCi2aP+hY2BfgcRA+QgXoNgiYsHgtohu1QQ1wahFZAM6WfT/PwB/ZbzDygVjhgAAAABJRU5ErkJggg==" InformativeScreenshot="f86b10b3b58ba552b795c10b8b5980f9.png" ScopeSelectorArgument="&lt;wnd app='wps.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: et.exe" sap:VirtualizedContainerService.HintSize="484,625" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="23d31486-2590-44c9-a077-ed612d70b1c3" Version="V2">
+                      <uix:NApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="x:Object">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="450,332" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NTypeInto ActivateBefore="True" DisplayName="Escribir en 'Export to PDF'" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="23d31486-2590-44c9-a077-ed612d70b1c3" Version="V3">
+                              <uix:NTypeInto.Target>
+                                <uix:TargetAnchorable CvElementArea="581, 358, 130, 42" CvTextArea="593, 371, 106, 19" CvTextArgument="Export to PDF" CvType="Button" DesignTimeRectangle="581, 358, 130, 42" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Export to PDF'" Guid="5decadef-6e18-4c63-993c-9f808bdb1c97" InformativeScreenshot="e0e778e42573fe71cc3c2984a90914c1.png" ScopeSelectorArgument="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' idx='*' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V2" Visibility="Interactive" />
+                              </uix:NTypeInto.Target>
+                            </uix:NTypeInto>
+                          </Sequence>
+                        </ActivityAction>
+                      </uix:NApplicationCard.Body>
+                      <uix:NApplicationCard.TargetApp>
+                        <uix:TargetApp Area="565, 260, 770, 470" FilePath="ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANdSURBVFhH7ZNJT5NRFIb5J4AgAso8yLRgyQ8w4pDAUv8EkzOCjEZ3CpEYdalLCgiUqQyFoCYuSKqJJBoHnACh7fWce8/57ml7C40u9SRP3jffGd4bLWn/i6s+OFhft3I7VLcyGKldHlR1AKr0qH8F3MYMzKJYWxAQql0aUE5g2VMXcgaoESq914csirVVvdQf4YWapX6hwKJQoFqo9jDL6tyP+QYsD0Qo1hYf+zP6hLqQM/2qCjzF2qoK9KmTgV4Ne1QNLHgK6B5pKvMx3wiKtVW5YI4h7FGl5348h827+hRrq3KhB5oMDrL2qgryqC5wljUVcJZibZXP31JMhVD2TesjanHrjfoZ/qUOq+/7u+riqycH3qNYW2Xz3d5CPI1rw2ovEqbzhxc+8sLLx85bSNlcd+IDSue6dAMpFYqMfXytDz/78ELVLvRRz87j4z0FdI+U52LvdyU+oGTWDCPsUZHN3a/6AWfWhpz9eOSMax49xdoqmb2pimcMOMSK8ANOB4foO8/FelQNe1QHeJNibRXBQtFMpxMf/Rc8fb+uquZ69BH8zgfZ83xi3yrnUKytQv8N3UAKhSKngvdS+hFuh/fU8tZb1bw2ovBeUuAmxdoq8F/3BgqmjUfVgD8L//yBFP8M96MRdW51WO8h+hYpe4q1dQKCUgUfyyp9+UyXerS5oh/h/7wRsxMPxdrCj8enrxmmhEqfQr9h8a5+wNbetjfPtzkcZynWVj58zJ+66gQXWI23aveMNgTu6Ad8gQfkT8J3BPus5CnWVt7kFZUHTQ171JQws8XTnerhuyX9AP+nDfrON0kJirWVCweS0bT6QH3b31HRaPRAuMLwI2xcvq9yn8M+gndYtb+c+IBj8DFnwsAeFWmGB/xI4de/Q3+G54PD3m4yKNZWzsQllQMN5Ch5VO2FenOs0nt9oYC5Z9R4xwO46SJ7vMNT7YVqcI5Vwx5VetPHXYq1lTXeDg0GA1g7VNaY8ajScz8ec8uo9Ham3fEAOq7BRVYXcgY4MtbmqfTcj9kBsEextjJ97RE+kOmz6kLOuJAzrnnMolhbmWOtIV7I9LUKTSRDqPR2Rt5oo55R7SGLYm1lT7TVZ/haQumjrREcSh9t8RbYo0qfrJ8cvN0SwiyK/ecrLe03Q4ISlwDtsCQAAAAASUVORK5CYII=" InformativeScreenshot="0e34be8ad00b66edcfa661c01078bca6.png" Selector="&lt;wnd app='et.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' idx='*' /&gt;" />
+                      </uix:NApplicationCard.TargetApp>
+                    </uix:NApplicationCard>
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -162,9 +240,8 @@
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 1920, 1040" FilePath="ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019" IconBase64="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" InformativeScreenshot="70a0ca01dd08e4b8c199825f3c7b156b.png" Selector="&lt;wnd app='wps.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office' /&gt;" Title="Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" />
+        <uix:TargetApp Area="0, 0, 1920, 1040" FilePath="ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019" IconBase64="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" InformativeScreenshot="23c0f5ed072c537299f2bc012c8a3055.png" Selector="&lt;wnd app='wps.exe' appid='ZhuhaiKingsoftOfficeSoftw.WPSOffice2019_924xes6e8q1tw!WPSOffice2019' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office' /&gt;" Title="Nomina_ejemplo_SMI_2023_BOE_15_02.xls - WPS Office" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:WriteCell Cell="P4" DisplayName="Escribir libro de celda" sap:VirtualizedContainerService.HintSize="580,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="Hoja1" Text="Hola que tal" WorkbookPath="C:\Users\Mike\Documents\RPA\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
   </Sequence>
 </Activity>
