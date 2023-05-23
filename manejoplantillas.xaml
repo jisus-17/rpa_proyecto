@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>869.6,1486.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869.6,1282.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>manejoplantillas_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,7 +108,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="622.4,1421.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="622.4,1217.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="carpeta_existe" />
       <Variable x:TypeArguments="x:Boolean" Name="archivo_existe" />
@@ -119,9 +119,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FolderExistsX DisplayName="La carpeta existe" Exists="[carpeta_existe]" sap:VirtualizedContainerService.HintSize="560,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="C:\Users\34675\Downloads\plantillas" />
-    <ui:FileExistsX DisplayName="El archivo existe" Exists="[archivo_existe]" sap:VirtualizedContainerService.HintSize="560,134.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="C:\Users\34675\Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls" />
-    <If Condition="[not carpeta_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="560,839.2" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:FolderExistsX DisplayName="La carpeta existe" Exists="[carpeta_existe]" sap:VirtualizedContainerService.HintSize="560,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas&quot;)]" />
+    <ui:FileExistsX DisplayName="El archivo existe" Exists="[archivo_existe]" sap:VirtualizedContainerService.HintSize="560,134.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
+    <If Condition="[not carpeta_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="560,756.8" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="526.4,573.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -129,7 +129,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Crear carpeta" sap:VirtualizedContainerService.HintSize="483.2,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="C:\Users\34675\Downloads\plantillas" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Crear carpeta" sap:VirtualizedContainerService.HintSize="483.2,80.8" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas&quot;)]" />
           <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Descargar archivo" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas&quot;)]" File="[plantilla]" sap:VirtualizedContainerService.HintSize="483.2,363.2" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
             <ui:GetLastDownloadedFile.Body>
               <ActivityAction>
@@ -155,10 +155,5 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="560,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="si:FileInfo">[plantilla]</OutArgument>
-      </Assign.To>
-    </Assign>
   </Sequence>
 </Activity>
