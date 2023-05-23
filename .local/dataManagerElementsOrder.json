@@ -23,6 +23,7 @@
       "Path": "Rellenar nomina.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "Trabajador&Sequence_1",
         "in_TablaTrabajadores&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
