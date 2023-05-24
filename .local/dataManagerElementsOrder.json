@@ -11,7 +11,11 @@
     {
       "Path": "Leer datos trabajadores.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "contraseña&Sequence_1",
+        "sqlContraseña&Sequence_1",
+        "sqlUsuario&Sequence_1"
+      ],
       "ArgumentsSectionElementsOrder": [
         "out_ConexionDdbb",
         "out_TablaTrabajadores"
@@ -23,6 +27,8 @@
       "Path": "Rellenar nomina.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "carpetaGuardadoOk&Sequence_1",
+        "nominaMail&Sequence_1",
         "Trabajador&Sequence_1",
         "in_TablaTrabajadores&Sequence_1"
       ],
@@ -47,6 +53,7 @@
       "Path": "manejoplantillas.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "urlDescargaPlantilla&Sequence_2",
         "carpeta_existe&Sequence_2",
         "archivo_existe&Sequence_2"
       ],

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Leer_datos_trabajadores" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Leer_datos_trabajadores" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_TablaTrabajadores" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_ConexionDdbb" Type="OutArgument(ui:DatabaseConnection)" />
@@ -43,6 +43,9 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Activities.System</x:String>
+      <x:String>System.Net</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,21 +98,45 @@
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Leer_datos_trabajadores" sap:VirtualizedContainerService.HintSize="450,420" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Leer_datos_trabajadores" sap:VirtualizedContainerService.HintSize="496,725" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="sqlUsuario" />
+      <Variable x:TypeArguments="ss:SecureString" Name="sqlContraseña" />
+      <Variable x:TypeArguments="x:String" Name="contraseña" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:DatabaseConnect DisplayName="Conectar a base de datos" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient" ConnectionString="Data Source=DESKTOP-FIPMHGT\SQLEXPRESS;Initial Catalog=Proyecto;Persist Security Info=True;User ID=sa;Password=password1234;Encrypt=False" DatabaseConnection="[out_ConexionDdbb]" />
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_TablaTrabajadores]" DisplayName="Ejecutar consulta" ExistingDbConnection="[out_ConexionDdbb]" sap:VirtualizedContainerService.HintSize="388,89" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * from proyecto.dbo.Trabajadores ">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="sqlUser" CacheStrategy="None" DisplayName="Obtener credencial" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sqlContraseña]" Username="[sqlUsuario]" />
+    <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[contraseña]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, sqlContraseña).Password]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:DatabaseConnect DisplayName="Conectar a base de datos" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="Microsoft.Data.SqlClient" ConnectionString="[&quot;Data Source=DESKTOP-FIPMHGT\SQLEXPRESS;Initial Catalog=Proyecto;User ID=&quot; + sqlUsuario + &quot;;Password=&quot; + contraseña + &quot;;Encrypt=False&quot;]" DatabaseConnection="[out_ConexionDdbb]" />
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[out_TablaTrabajadores]" DisplayName="Ejecutar consulta" ExistingDbConnection="[out_ConexionDdbb]" sap:VirtualizedContainerService.HintSize="434,89" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="Select * from proyecto.dbo.Trabajadores ">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[out_TablaTrabajadores]" DisplayName="Ordenar tabla de datos" sap:VirtualizedContainerService.HintSize="388,80" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[out_TablaTrabajadores]" SortOrder="Ascending">
+    <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[out_TablaTrabajadores]" DisplayName="Ordenar tabla de datos" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[out_TablaTrabajadores]" SortOrder="Ascending">
       <ui:SortDataTable.ColumnIndex>
         <InArgument x:TypeArguments="s:Nullable(x:Int32)">
           <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="1" />
