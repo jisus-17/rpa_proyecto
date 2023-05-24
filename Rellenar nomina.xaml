@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Rellenar_nomina" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,5837" sap2010:WorkflowViewState.IdRef="Rellenar_nomina_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Rellenar_nomina" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1087,5686" sap2010:WorkflowViewState.IdRef="Rellenar_nomina_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -124,11 +124,10 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Rellenar_nomina" sap:VirtualizedContainerService.HintSize="784,5772" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Rellenar_nomina" sap:VirtualizedContainerService.HintSize="784,5621" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="in_TablaTrabajadores" />
       <Variable x:TypeArguments="x:String" Name="Trabajador" />
-      <Variable x:TypeArguments="si:FileInfo" Name="plantilla" />
       <Variable x:TypeArguments="x:String" Name="nominaMail" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -142,20 +141,13 @@
         <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_ConexionDdbb" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="manejoplantillas.xaml - Invocar archivo de flujo de trabajo" sap:VirtualizedContainerService.HintSize="722,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="manejoplantillas.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="si:FileInfo" x:Key="plantilla">
-          <VisualBasicValue x:TypeArguments="si:FileInfo" ExpressionText="plantilla" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_TablaTrabajadores]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="722,5355" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_TablaTrabajadores]" DisplayName="Para cada fila de la tabla de datos" sap:VirtualizedContainerService.HintSize="722,5357" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="688,5238" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Cuerpo" sap:VirtualizedContainerService.HintSize="688,5240" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,13 +170,13 @@
             <ui:WriteCell Cell="H55" DisplayName="Escribir dia actual" sap:VirtualizedContainerService.HintSize="626,116" sap2010:WorkflowViewState.IdRef="WriteCell_18" SheetName="Hoja1" Text="[datetime.Today.Day.ToString]" WorkbookPath="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
             <ui:WriteCell Cell="N55" DisplayName="Escribir mes actual" sap:VirtualizedContainerService.HintSize="626,116" sap2010:WorkflowViewState.IdRef="WriteCell_19" SheetName="Hoja1" Text="[datetime.Today.Month.ToString]" WorkbookPath="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
             <ui:WriteCell Cell="Q55" DisplayName="Escribir año actual" sap:VirtualizedContainerService.HintSize="626,116" sap2010:WorkflowViewState.IdRef="WriteCell_20" SheetName="Hoja1" Text="[datetime.Today.Year.ToString]" WorkbookPath="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: LibreOffice" sap:VirtualizedContainerService.HintSize="626,3627" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="d3ba0b87-879c-45e0-9da3-8e60398b4009" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Utilizar Aplicación: LibreOffice" sap:VirtualizedContainerService.HintSize="626,3629" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" ScopeGuid="d3ba0b87-879c-45e0-9da3-8e60398b4009" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="592,3336" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="592,3338" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -248,13 +240,13 @@
                         <InArgument x:TypeArguments="x:String">["Nomina " + CurrentRow(1).ToString + "Pdf"]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="miguelrpa2023@gmail.com" DisplayName="Utilizar Gmail" EmailAddress="miguelrpa2023@gmail.com" sap:VirtualizedContainerService.HintSize="530,707" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+                    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="miguelrpa2023@gmail.com" DisplayName="Utilizar Gmail" EmailAddress="miguelrpa2023@gmail.com" sap:VirtualizedContainerService.HintSize="530,709" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
                       <umab:GmailApplicationCard.Body>
                         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="496,523" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                          <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="496,525" sap2010:WorkflowViewState.IdRef="Sequence_18">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
