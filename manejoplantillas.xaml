@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>856,5308</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>869.6,2384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>manejoplantillas_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,7 +110,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="795.2,5243.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="795.2,2319.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="carpeta_existe" />
       <Variable x:TypeArguments="x:Boolean" Name="archivo_existe" />
@@ -123,15 +123,15 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:FolderExistsX DisplayName="La carpeta existe" Exists="[carpeta_existe]" sap:VirtualizedContainerService.HintSize="732.8,134.4" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas&quot;)]" />
     <ui:FileExistsX DisplayName="El archivo existe" Exists="[archivo_existe]" sap:VirtualizedContainerService.HintSize="732.8,134.4" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
-    <If Condition="[carpeta_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="732.8,4782.4" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[carpeta_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="732.8,1858.4" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="699.2,3077.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence sap:VirtualizedContainerService.HintSize="699.2,1675.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[not archivo_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="656,2988" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[not archivo_existe]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="656,1585.6" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="622.4,1402.4" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
@@ -192,62 +192,12 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="622.4,1402.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence sap:VirtualizedContainerService.HintSize="300,82.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Descargar archivo" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas&quot;)]" File="[plantilla]" sap:VirtualizedContainerService.HintSize="579.2,1312.8" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4">
-                  <ui:GetLastDownloadedFile.Body>
-                    <ActivityAction>
-                      <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="545.6,1054.4" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="descargar plantilla" sap:VirtualizedContainerService.HintSize="483.2,742.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" InteractionMode="DebuggerApi" ScopeGuid="cb917ce1-b63e-44bb-89b3-5dbc19e21e09" Version="V2">
-                          <uix:NApplicationCard.Body>
-                            <ActivityAction x:TypeArguments="x:Object">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                              </ActivityAction.Argument>
-                              <Sequence DisplayName="Hacer" sap:VirtualizedContainerService.HintSize="449.6,525.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NGoToUrl DisplayName="Ir a URL" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NGoToUrl_4" Url="https://plantillasymodelos.net/wp-content/uploads/2023/02/Nomina_ejemplo_SMI_2023_BOE_15_02.xls" Version="V3" />
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Clic 'push button'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cb917ce1-b63e-44bb-89b3-5dbc19e21e09" Version="V3">
-                                  <uix:NClick.Target>
-                                    <uix:TargetAnchorable DesignTimeRectangle="533, 168, 163, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;ctrl name='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Contenedor de la barra de información' role='grouping' /&gt;&lt;ctrl name='Descargar archivo' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - Microsoft Edge' role='pane' /&gt;&lt;ctrl name='Contenedor de la barra de información' role='grouping' /&gt;&lt;ctrl name='Descargar archivo' role='push button' automationid='' /&gt;" Guid="aa20aaec-1093-481f-92f8-77b9bfcd4d4a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKcAAAAsCAYAAAAAYaj3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASKSURBVHhe7Z09q1VHFIbFPxDEJPhPLK3tUokgt4xXiHX8B2nSpkoX8IMgSFothIBNIBCxCAkoBAyEBMRAuCKKbHmOPLKcM/tizDn7TORd8HD3nq+1Zq13Zp/uHjlzdm8KYUQizjAsEWcYljfEefrcxenE+cvTkYu3Q9gJH+9fWelwTZwf7l/rTghhSY7vf7suzqOf3eoODmFJ0OGaOHsDQ9gFEWcYlogzDEvEGYYl4gzDEnGGYYk4w7BEnGFYIs4wLBFnGJaIMwzLIuL89c+DqTXavvr+9+748N8w370+efj46Wpcr28UFhXnjbt/rbj586Pp0cHzVdudB39354R3523FCb2+UVhUnG07wsRyg26WtxHn/4GdivPklz9OT569WPXXNkWL/fTwn+mTr++97ufm9dbl7xc3f3vdxzO3gcYNTfunV39ZraMxhjbnYcTAeAwfrld9ffPDH6tn+42VPWCMqQfNfdPW7rPSxk2srE3f59/dX7URm+vR1pvnfh3HHu0ntt6eeXaMPoGYMffT5pC5db1tsFNx9vpIFJB4oKi806c4KAIF8mcCfYzFFBFYLMYgIuYoFMbpU6s/MRSF67GGItQnY4jfWC2yh8m90V4L30LRWdM9YcZiHFgV/mH71S99zHFN8wgY43hmLlbXV4jEjQjNmb54h3pxbJqhxElyMApiv4klQfXZfotO4khWTwRtG0XEfNfqOG/vmnzjIw7e23UVjPG7N9rruJZ2HUSkcBRnFRYctt+eXw+O75g+WAOrh7O+93JhXB6IbTCEOEkyz4qvZyTDhGCcbEUAWE1uheRz2vFFUTXnYxZKeG8FoX/FCQiWWCw+Zv9h+65QdIpsLjT6ej4Bm9tvz2/bhtHmO3uwDh4yxc24NheA1TU2zU7FSVEwk6w4SQpFqXhDWEiLaAKxuVNMYhmPQFnLm4Bn+rE2yb2CMB5TKN7A/KXPz+O/ESf7ITZ8IXTWUej0tz4Fm9tvz2/bhtU9168W+VGo0MsFYHWNTbMzcSI2i+Bn2uKSqDpW6ifMT5HJIZncinUMsDZWi+vvKQrBO9Ym2Zjrp8zD41r4rPPeRZzOMRZgXYznOXHO7Rd6fts2rMZuPj34Vfjmq+bCuOYOyCZYVJwkGEwAVoVIgmgHxpEAiufNSpJqO2af795AgB9vZ9q5ZZmvbwWB1UKBnzbXqzGzBmP83ac/fzLY3xNJC/Mw9kY8fl4x+hWBa8rcfunr+W3bsHbP1Xf9Xe8BZ391r4ztHY5Nsag4NTaGqOpJFBLhScVIPoWgrwqLvxSjJodxCoR+C0oynccc2rHDxAnVHzEpWOMhVv0x3379toKYg5gwfBFrnTcnTpjbb89v24bRVsfgG2PN2g7EQS008lEFvA0WEef7gqLedlHCKyLOGbgpuN25TbgRecba2yZsj4hzBn5y+CnE/Cmyzd9Y4U0izjAsEWcYlogzDEvEGYYl4gzDEnGGYYk4w7BEnGFYIs4wLBFnGJY1cR67cL07MIQl+eDCjXVxntq7NH10/mp3QghLwH90QYdr4gxhHPaml6SNQtn08NdbAAAAAElFTkSuQmCC" InformativeScreenshot="b7d8fd91f7a63d74270553239af206d6.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Nomina_ejemplo_SMI_2023_BOE_15_02.xls - Personal: Microsoft​ Edg*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
-                                      <uix:TargetAnchorable.PointOffset>
-                                        <uix:PointOffset Position="BottomRight" X="-62" Y="-19" />
-                                      </uix:TargetAnchorable.PointOffset>
-                                    </uix:TargetAnchorable>
-                                  </uix:NClick.Target>
-                                </uix:NClick>
-                                <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_6" />
-                              </Sequence>
-                            </ActivityAction>
-                          </uix:NApplicationCard.Body>
-                          <uix:NApplicationCard.TargetApp>
-                            <uix:TargetApp Area="-9, -9, 1938, 1098" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAQhJREFUWEftl9ENwjAMRDsCIzAKm8AGsAGMwEaMwgiMQP0qTkKy09YkfCDypJNKnFzckLTu0AnYmW6mh+nZUHjuTbOcTdHglmKOkINJnS6mjSlCfTLgdTJpLKvsYIkI0nGOTxIQ3Bhjmcsh49Kdi5oE8GYs+8ux1libczv9ylOcZ20CWsZaOYqBgKup9pg6ioHG9AR6Ar+XAG8wjtz9dS2y7SKdAEaKYSyy7UIxRymAiWKYi2y7UMxRCvCaxghjrkW2XaQTaE1PoCdQnEfHZ6kkq0ElWZiAilIqnm9xNDFHWJRSKis7KuOWK4HX+zdH9IieaFXvzWlxhXl66e9oJfYXnuEHyT8zDCPMjw3PbnWtNQAAAABJRU5ErkJggg==" InformativeScreenshot="df18416db73cf7ff8caa558af59f9e72.png" Selector="&lt;html app='msedge.exe' url='edge://newtab' /&gt;" Title="Nueva pestaña" Url="edge://newtab" />
-                          </uix:NApplicationCard.TargetApp>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </uix:NApplicationCard>
-                        <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\plantillas\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" DisplayName="Mover archivo" sap:VirtualizedContainerService.HintSize="483.2,160" sap2010:WorkflowViewState.IdRef="MoveFile_4" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads\Nomina_ejemplo_SMI_2023_BOE_15_02.xls&quot;)]" />
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:GetLastDownloadedFile.Body>
-                </ui:GetLastDownloadedFile>
               </Sequence>
             </If.Else>
           </If>
