@@ -27,6 +27,9 @@
       "Path": "Rellenar nomina.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "link_descarga&Sequence_17",
+        "json_deserializado&Sequence_17",
+        "json_respuesta&Sequence_17",
         "carpetaGuardadoOk&Sequence_1",
         "nominaMail&Sequence_1",
         "Trabajador&Sequence_1",
@@ -60,6 +63,18 @@
       "ArgumentsSectionElementsOrder": [
         "plantilla"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Secuencia.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "link_descarga&Sequence_1",
+        "json_deserializado&Sequence_1",
+        "json_respuesta&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
